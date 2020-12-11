@@ -1,0 +1,89 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <style> 
+    .live {
+        background-color: rgb(153, 241, 153);
+    }
+    .dead {
+        background-color: rgb(202, 202, 202)
+    }
+    table {
+        margin: auto;
+        table-layout: fixed;
+    }
+
+    </style>
+</head>
+<body>
+<div class="conainer"> 
+    <div class="row">
+        <div class="col-12">
+            <div class="card mx-auto"  style="width: 80%">
+                <div class="card-body">
+                    <h5>Задание</h5>
+                    <p>
+                        Дана доска размером M × N клеток. Клетка может находиться в одном из двух состояний: 1 — живая, 0 — мёртвая. 
+Каждая клетка взаимодействует с восемью соседями. Правила таковы:
+
+<ul> 
+    <li> Живая клетка, у которой меньше двух живых соседей, погибает. </li>
+    <li> Живая клетка, у которой два или три живых соседа, выживает. </li>
+    <li> Живая клетка, у которой больше трёх живых соседей, погибает. </li>
+    <li> Мёртвая клетка, у которой три живых соседа, возрождается.</li>
+    </ul>
+
+Напишите программу, которая будет:
+<ul> 
+<li> случайным образом генерить стартовое состояние; </li> 
+<li> уметь получать его из файла (способ выбирается через параметры запуска в консоли); </li> 
+<li> каждую секунду выводить в консоль новое состояние доски </li>
+</ul>
+                    </p>
+                    <hr>
+                    <p>Вы можете загрузить json файл с вашим полем вручную через input или ввести размер поля для его генерации</p>
+                    <div class="row"> 
+                        <div class="col-6"> 
+                    <form class="upload">                       
+                    <div class="form-group">
+                    <label for="files">Загрузите json файл</label>
+                        <input type=file id="files" />
+                    </div>
+                    <button class="btn btn-primary" id="upload"> Upload and Start</button>
+                     </form>
+                    </div> 
+                    <div class="col-6"> 
+                     <p>Или введите поле вручную</p>
+                    <form id = "numInput" class = "mb-2">
+                        <div class="form-group">
+                          <label for="number">Введите число M</label>
+                          <input required type="number" class="form-control" id="numberM">
+                          <label for="number">Введите число N</label>
+                          <input required type="number" class="form-control" id="numberN">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Нарисовать поле</button>
+                    </form>
+                    <button class="btn btn-primary" id = "reset">Стоп</button>
+                    </div>
+                </div>
+                      <div id = "gamefield" class = "mt-5" >
+
+                      </div>
+                </div>
+            </div>
+        </div>
+     </div>   
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
+    <script src = "./app.js"></script>
+</body>
+</html>
