@@ -162,6 +162,7 @@ function placeLife (m, n) {
                 }
             }
         }
+        console.log(b)  
         arr = b
         return b
     }
