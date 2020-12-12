@@ -118,7 +118,7 @@ function placeLife (m, n) {
             for (let j = 0; j < a[i].length; j++) {
                 let neighbours 
                 if (i !== 0 && j !==0 && j < a[i].length - 1 && i < a.length - 1) {
-                    neighbours = a[i+1][j+1] + a[i+1][j]+ a[i][j+1] + a[i][j-1]
+                    neighbours = a[i+1][j+1] + a[i+1][j] + a[i][j-1] + a[i-1][j+1]
                              + a[i][j+1]+ a[i-1][j] + a[i+1][j-1] + a[i-1][j-1] 
                 } 
                 if (i === 0 && j === 0) {
@@ -158,7 +158,7 @@ function placeLife (m, n) {
                 } else if ( neighbours === 2 ) {
                     a[i][j] === 1 ? b[i][j] = 1 : b[i][j] = 0  
                 } else if ( neighbours === 3 ) {
-                     b[i][j] = 1  
+                    a[i][j] === 0 ? b[i][j] = 1 : b[i][j] = 1
                 }
             }
         }
